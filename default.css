@@ -233,24 +233,26 @@ h6 {font-size: 16px;}
 }
 
 .about-wrapper{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 600px);
     padding-bottom: 50px;
     padding-top: 50px;
 }
-.about-me{
+/* .about-me{
     flex: 1;
 }
 .education{
     flex:1;
-}
+} */
 #skills{
     justify-content: space-evenly;
+    overflow-x: auto;
 }
 #styled-table{
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
-    min-width: 400px;
+    width: 100%;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -357,9 +359,38 @@ h6 {font-size: 16px;}
 
     .right-column{
         justify-content: center;
+        padding-top: 15px;
     }
     .about-wrapper{
-        flex-direction: column;
-        align-items: center;
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 360px){
+    .intro-wrapper{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            'nav-wrapper' 
+            'left-column'
+            'right-column'
+        ;
+    }
+
+    .right-column{
+        justify-content: center;
+        padding-top: 15px;
+    }
+    .about-wrapper{
+        font-size: 14px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 300px);
+        padding: 10px;
+    }
+    #preview-shadow{
+        width: 200px;
+    }
+    #preview{
+        width: 200px;
+        height: 180px;
+        font-size: 12px;
     }
 }
